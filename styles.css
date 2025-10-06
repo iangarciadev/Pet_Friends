@@ -1,0 +1,29 @@
+:root {
+    --laranja-principal: #e1945d;
+    --branco-principal: #f8efde;
+    --verde-principal: #8ea08c;
+}
+
+body {
+    background-color: var(--verde-principal);
+}
+
+header {
+    display: flex;
+    background-color: var(--laranja-principal);
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--branco-principal);
+    ;
+}
+
+.menu {
+    padding: 1em;
+    display: flex;
+    gap: 1.5em;
+}
+
+nav.menu a {
+    text-decoration: none;
+    color: var(--branco-principal);
+}
