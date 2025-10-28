@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    background-color: var(--laranja-principal);
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--branco-principal);
+    font-size: 1.1em;
+}
+
+.menu {
+    padding: 1.2em;
+    display: flex;
+    gap: 1.5em;
+}
+
+.titulo_ong {
+    font-weight: 600;
+}
+
+h1 a{
+    text-decoration: none;
+    color: var(--branco-principal);
+    font-weight: 400;
+}
+
+.menu__ancora:hover {
+    color: var(--laranja-secundario);
+}
+
+nav.menu a {
+    text-decoration: none;
+    color: var(--branco-principal);
+}
+
+.redes_cabecalho {
+    display: flex;
+    gap: 1em;
+}
+
+.logo {
+    height: 1.5em;
+}

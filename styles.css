@@ -1,59 +1,59 @@
+@import url('styles/header.css');
+
+
+
 :root {
     --laranja-principal: #e1945d;
+    --laranja-secundario: #a66736;
     --branco-principal: #f8efde;
     --verde-principal: #8ea08c;
+    --fonte-princioal: 'Public Sans', sans-serif;
 }
 
 body {
     background-color: var(--verde-principal);
-}
-
-header {
-    display: flex;
-    background-color: var(--laranja-principal);
-    justify-content: space-evenly;
-    align-items: center;
-    color: var(--branco-principal);
-    font-size: 1.1em;
-    padding: 1em 4em;
-}
-
-.menu {
-    padding: 2em;
-    display: flex;
-    gap: 1.5em;
-}
-
-h1 a{
-    text-decoration: none;
-    color: var(--branco-principal);
-}
-
-nav.menu a {
-    text-decoration: none;
-    color: var(--branco-principal);
+    font-family: var(--fonte-princioal);
 }
 
 .missao {
     background-color: var(--branco-principal);
-    padding: 2em;
     color: var(--verde-principal);
-    height: 40vh;
     display: flex;
-    justify-content: space-evenly;
-    padding: 1em 4em;
     align-items: center;
+    padding: 2em;
     gap: 2em;
+    justify-content: space-between;
 }
 
-#doguinho1 {
-    border-radius: 3%;
-    border: #8ea08c 0.3em solid;
-    height: 35vh;
+.imagens__missao {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    padding-right: 2em;
 }
 
-.texto_missao {
+/* .imagens__doguinhos_esquerda {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 10em;
+} */
+
+.doguinho {
+    border-radius: 3%;
+    max-width: 20em;
+}
+
+#doguinho__esquerda {
+    height: 60vh;
+    border-radius: 3%;
+}
+
+.imagens__doguinhos_direita {
+    display: flex;
+    gap: 2em;
+    flex-direction: column;
+}
+
+.texto__missao{
+    padding-left: 20em;
 }

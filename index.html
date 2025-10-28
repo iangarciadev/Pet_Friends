@@ -3,28 +3,45 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <title>Pet Friends</title>
-        <link rel="stylesheet" href="reset.css">        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header class="Cabecalho">
             <h1>
-                <a href="index.html"> ONG Pet Friends </a></h1>
+                <a href="index.html" class="titulo_ong"> ONG Pet Friends</a></h1>
             <nav class="menu">
-                <a href="sobre.html">Quem Somos</a>
-                <a href="adocao.html">Nossos Pets</a>
-                <a href="noticias.html">Notícias</a>
-                <a href="contribua.html">Contribua</a>
-                <a href="voluntario.html">Seja Voluntário</a>
-                 <a href="contato.html">Contato</a>
+                <a href="sobre.html" class="menu__ancora">Quem Somos</a>
+                <a href="adocao.html" class="menu__ancora">Nossos Pets</a>
+                <a href="noticias.html" class="menu__ancora">Notícias</a>
+                <a href="contribua.html" class="menu__ancora">Contribua</a>
+                <a href="voluntario.html" class="menu__ancora">Seja Voluntário</a>
+                 <a href="contato.html" class="menu__ancora">Contato</a>
             </nav>
+            <div class="redes_cabecalho">
+                <a href="#"><img src="Images/logo_insta.png" alt="Ícone do Instagram" class="logo"></a>
+                <a href="#"><img src="Images/logo_face.png" alt="Ícone do Facebook" class="logo"></a>
+                <a href="#"><img src="Images/logo_whats.png" alt="Ícone do WhatsApp" class="logo"></a>
+            </div>
         </header>
         <section class ="missao">
             <div class="texto_missao">
                 <h2> Nossa Missão </h2>
                 <p>Somos uma ONG dedicada a resgatar, cuidar e encontrar lares amorosos para animais abandonados. Nossa missão é promover o bem-estar animal e conscientizar a comunidade sobre a importância da adoção responsável. (TEXTO PROVISÓRIO) </p>
             </div>
-            <img src="Images/Doguinho1.png" alt="Cachorro feliz" id="doguinho1">
+            <div class="imagens__missao">
+                <div class="imagens__doguinhos_esquerda">
+                    <img src="Images/Doguinho2.png" alt="Cachorro preto sorrindo" id="doguinho__esquerda">
+                </div>
+                <div class="imagens__doguinhos_direita">
+                    <img src="Images/Doguinho1.png" alt="Cachorro marrom com moletom sentado na cama" class="doguinho">
+                    <img src="Images/Doguinho3.png" alt="Cachorro marrom sorrindo com a lingua de fora" class="doguinho">
+                </div>
+            </div>
         </section>
         <section>
             <h2> Conheça nossos pets</h2>
