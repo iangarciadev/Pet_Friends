@@ -7,12 +7,6 @@ const ONG = {
   nome: "Pet Friends",
   contatos: [
     {
-      icone: "📱",
-      label: "WhatsApp",
-      valor: "(11) 91234-5678",
-      link: "https://wa.me/5511912345678"
-    },
-    {
       icone: "📸",
       label: "Instagram",
       valor: "@petfriends_animal",
@@ -21,8 +15,8 @@ const ONG = {
     {
       icone: "📧",
       label: "E-mail",
-      valor: "adocao@petfriends.org",
-      link: "mailto:adocao@petfriends.org"
+      valor: "petfriends.22@gmail.com",
+      link: "mailto:petfriends.22@gmail.com"
     },
 
   ]
