@@ -370,3 +370,70 @@ footer {
 @media (max-width: 680px) {
   .contact-inner { grid-template-columns: 1fr; }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   Seção "Como ajudar"
+───────────────────────────────────────────────────────────── */
+.help-section {
+  background: var(--bg);
+  border-top: 1.5px solid var(--border);
+}
+.help-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 64px 5%;
+}
+.help-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.help-header h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.help-header p {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.help-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--border);
+  border: 1.5px solid rgba(255,255,255,.25);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+.help-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.help-item strong {
+  display: block;
+  color: var(--accent);
+  font-size: .95rem;
+  margin-bottom: 4px;
+}
+.help-item p {
+  color:var(--accent);
+  font-size: .83rem;
+  line-height: 1.4;
+}
+
+.help-cta {
+  text-align: center;
+  color: var(--accent);
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
