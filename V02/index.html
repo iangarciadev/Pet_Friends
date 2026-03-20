@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patinhas do Bem — Adoção Responsável</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══════════════ HEADER ══════════════ -->
+  <header>
+    <div class="logo">
+      <span class="logo-icon">🐾</span>
+      <div>
+        <span class="logo-text">Patinhas do Bem</span>
+        <span class="logo-sub">ONG de Proteção Animal</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#cachorros">Adotar</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero">
+    <h1>Todo cachorro merece um lar <em>cheio de amor</em></h1>
+    <p>Conheça os nossos peludos que estão esperando por uma família. A adoção é gratuita e responsável.</p>
+    <a href="#cachorros" class="btn">Ver cachorros disponíveis</a>
+  </section>
+
+  <!-- ══════════════ CACHORROS ══════════════ -->
+  <section class="section" id="cachorros">
+    <div class="section-header">
+      <h2 class="section-title">Quem está te esperando 🐶</h2>
+      <span class="section-count" id="count-label"></span>
+    </div>
+    <div class="dogs-grid" id="dogs-grid">
+      <!-- Preenchido pelo JavaScript -->
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTATO ══════════════ -->
+  <div class="contact-section" id="contato">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <h2>Fale com a gente 💛</h2>
+        <p>Quer adotar, ser voluntário ou fazer uma doação? Entre em contato — adoramos conversar sobre nossos animais!</p>
+      </div>
+      <div class="contact-links" id="contact-links">
+        <!-- Preenchido pelo JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer>
+    © 2025 Patinhas do Bem — Feito com 🧡 por quem ama animais
+  </footer>
+
+  <!-- ══════════════ MODAL ══════════════ -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal" id="modal-box">
+      <!-- Preenchido pelo JavaScript ao abrir -->
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
