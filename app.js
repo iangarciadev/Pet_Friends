@@ -28,20 +28,6 @@ const ONG = {
   ]
 };
 
-/*
- * LISTA DE CACHORROS
- * Campos:
- *   nome       → string
- *   foto       → URL da imagem (ou "" para usar o emoji)
- *   emoji      → emoji exibido quando não há foto
- *   idade      → string, ex.: "2 anos" ou "6 meses"
- *   porte      → "Pequeno" | "Médio" | "Grande"
- *   sexo       → "Macho" | "Fêmea"
- *   castrado   → "Sim" | "Não"
- *   vacinado   → "Sim" | "Não"
- *   descricao  → texto curto sobre a personalidade
- *   tags       → array de strings (características)
- */
 const CACHORROS = [
   {
     nome: "Afonso",
@@ -64,7 +50,7 @@ const CACHORROS = [
     medicacao_continua: "Não",
     comorbidades: "Não",
     descricao: "Resgatado em uma construção em Mauá junto com a Pilar. Corriam risco de cair no fosso do elevador pois ficavam em um andar mais elevado",
-    tags: ["Dócil", "Brincalhão", "Adora crianças"]
+    tags: ["Dócil", "Brincalhão", "Tranquilo"]
   },
 
 ];
