@@ -1,0 +1,40 @@
+/* ─────────────────────────────────────────────────────────────
+   Quem Somos — estilos específicos
+───────────────────────────────────────────────────────────── */
+.qs-hero {
+  background: linear-gradient(135deg, #fff1e6 0%, #fde9da 100%);
+  padding: 56px 5% 48px;
+  border-bottom: 1.5px solid var(--border);
+}
+.qs-hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.qs-content {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 60px 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.qs-block h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.qs-block p {
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 680px) {
+  .qs-content { grid-template-columns: 1fr; gap: 36px; }
+}
