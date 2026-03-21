@@ -8,17 +8,36 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="quem-somos.css" />
 </head>
+
+<!-- ══════════════ BOTÃO VOLTAR AO TOPO ══════════════ -->
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao topo">
+  ↑
+</button>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const btn = document.getElementById('back-to-top');
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+</script>
+
 <body>
 
   <!-- ══════════════ HEADER ══════════════ -->
   <header>
-    <div class="logo">
-      <img class="logo-icon" src="Imagens/logo.png" alt="Logo Pet Friends" />
-      <div>
-        <span class="logo-text">Pet Friends</span>
-        <span class="logo-sub">Instituto Social</span>
-      </div>
+    <a href="index.html">
+      <div class="logo">
+        <img class="logo-icon" src="Imagens/logo.png" alt="Logo Pet Friends" />
+        <div>
+          <span class="logo-text">Pet Friends</span>
+          <span class="logo-sub">Instituto Social</span>
+        </div>
     </div>
+    </a>
     <nav>
       <a href="quem-somos.html">Quem somos</a>
       <a href="#nossa-historia">Nossa História</a>
