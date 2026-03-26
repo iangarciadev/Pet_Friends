@@ -215,3 +215,13 @@ document.addEventListener("keydown", function (e) {
 // ── Inicialização ─────────────────────────────────────────────
 renderCards();
 renderContacts();
+
+// Mostra o botão só após rolar 300px
+window.addEventListener('scroll', function () {
+  const btn = document.getElementById('back-to-top');
+  if (window.scrollY > 300) {
+    btn.classList.add('visible');
+  } else {
+    btn.classList.remove('visible');
+  }
+});

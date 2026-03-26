@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quem Somos — Pet Friends</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="quem-somos.css" />
+</head>
+
+<!-- ══════════════ BOTÃO VOLTAR AO TOPO ══════════════ -->
+<button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao topo">
+  ↑
+</button>
+
+<script>
+  window.addEventListener('scroll', function () {
+    const btn = document.getElementById('back-to-top');
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+</script>
+
+<body>
+
+  <!-- ══════════════ HEADER ══════════════ -->
+  <header>
+    <a href="index.html">
+      <div class="logo">
+        <img class="logo-icon" src="Imagens/logo.png" alt="Logo Pet Friends" />
+        <div>
+          <span class="logo-text">Pet Friends</span>
+          <span class="logo-sub">Instituto Social</span>
+        </div>
+    </div>
+    </a>
+    <nav>
+      <a href="quem-somos.html">Quem somos</a>
+      <a href="#nossa-historia">Nossa História</a>
+      <a href="index.html#cachorros">Adotar</a>
+      <a href="index.html#contato">Contato</a>
+      <a href="index.html#formas-de-ajudar">Formas de ajudar</a>
+    </nav>
+  </header>
+
+  <!-- ══════════════ TÍTULO ══════════════ -->
+  <section class="qs-hero">
+    <h1>Quem somos e por quê?</h1>
+  </section>
+
+  <!-- ══════════════ CONTEÚDO ══════════════ -->
+  <section class="qs-content">
+
+    <div class="qs-block">
+      <h2>Mais do que resgatar animais das ruas</h2>
+      <p>Nós já resgatamos mais de 530 animais das ruas de São Paulo e proximidades, mas nossa missão vai muito além disso.</p>
+      <p>Trabalhamos diariamente para encontrar lares responsáveis e colaborar para o aprendizado de tutores e futuros tutores. O nosso trabalho começa com uma conversa franca sobre o que é ter um animal em casa e ele não termina. Nós acompanhamos os animais adotados e prestamos suporte aos seus tutores.</p>
+    </div>
+
+    <div class="qs-block">
+      <h2>Trabalho voluntário</h2>
+      <p>Hoje, o corpo diretivo do Pet Friends é formado por 6 pessoas, no entanto recebemos o suporte de dezenas de voluntários. Esta é uma realização de todos.</p>
+      <p>100% do nosso trabalho é voluntário e abrange a parte administrativa, a comunicação e as finanças, mas também a hospedagem de animais, o transporte e a colaboração financeira.</p>
+      <p>Sempre existe uma forma de ajudar!</p>
+    </div>
+
+  </section>
+
+<!-- ══════════════ NOSSA HISTÓRIA ══════════════ -->
+<section class="timeline-section" id="nossa-historia">
+  <h2 class="timeline-title">Nossa história</h2>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-year">2018</div>
+      <div class="timeline-content">
+        <h3>Fundação</h3>
+        <p>Com apenas dois membros e muita vontade de mudar o mundo.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2019</div>
+      <div class="timeline-content">
+        <h3>Primeiros resgates</h3>
+        <p>Com mais gente e maturidade, começamos a retirar animais das ruas e reabilitá-los.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2020</div>
+      <div class="timeline-content">
+        <h3>+300 adoções</h3>
+        <p>E mais de 350 animais no projeto.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2021</div>
+      <div class="timeline-content">
+        <h3>Somos ONG</h3>
+        <p>Agora somos o Instituto Social Pet Friends e queremos ir muito longe.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2022</div>
+      <div class="timeline-content">
+        <h3>+400 adoções</h3>
+        <p>Mais de 450 animais no projeto.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2023</div>
+      <div class="timeline-content">
+        <h3>Comunidade e parcerias</h3>
+        <p>Ação em Parelheiros com castração de 120 animais. Novas empresas parceiras se juntam ao propósito.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2024</div>
+      <div class="timeline-content">
+        <h3>Rio Grande do Sul</h3>
+        <p>Arrecadação de alimentos, medicamentos e resgate de 20 cães e gatos.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-content">
+        <h3>A história continua</h3>
+        <p>A luta não para e nosso propósito é bem maior.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer>
+    © 2026 Pet Friends — Feito com 🧡 por quem ama animais
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+/* ─────────────────────────────────────────────────────────────
+   Quem Somos — estilos específicos
+───────────────────────────────────────────────────────────── */
+.qs-hero {
+  background: linear-gradient(135deg, #fff1e6 0%, #fde9da 100%);
+  padding: 56px 5% 48px;
+  border-bottom: 1.5px solid var(--border);
+}
+.qs-hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.qs-content {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 60px 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.qs-block h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.qs-block p {
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 680px) {
+  .qs-content { grid-template-columns: 1fr; gap: 36px; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Timeline
+───────────────────────────────────────────────────────────── */
+.timeline-section {
+  padding: 64px 5%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.timeline-title {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  margin-bottom: 48px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--border);
+  padding-left: 32px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 36px;
+  position: relative;
+}
+
+/* bolinha na linha */
+.timeline-item::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  position: absolute;
+  left: -38px;
+  top: 5px;
+  flex-shrink: 0;
+}
+
+.timeline-year {
+  font-family: 'Fraunces', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  min-width: 48px;
+  padding-top: 1px;
+}
+
+.timeline-content h3 {
+  font-size: .95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.timeline-content p {
+  font-size: .88rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
