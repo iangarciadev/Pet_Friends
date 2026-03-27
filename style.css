@@ -167,6 +167,7 @@ nav a:hover { color: var(--accent); }
   width: 100%;
   aspect-ratio: 4/3;
   object-fit: cover;
+   object-position: top;
 }
 .dog-photo-placeholder {
   width: 100%;

@@ -1,7 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════
-   DADOS DA ONG
-   ↓ Edite esta seção para personalizar o site
-═══════════════════════════════════════════════════════════════ */
+
 
 const ONG = {
   nome: "Pet Friends",
@@ -22,36 +19,6 @@ const ONG = {
   ]
 };
 
-const CACHORROS = [
-  {
-    nome: "Afonso",
-    foto: "Imagens/Afonso.png",
-    emoji: "🐶",
-    idade: "5 anos",
-    porte: "Médio",
-    sexo: "Macho",
-    castrado: "Sim",
-    vacinado: "Sim, V10 e Raiva",
-    afinidade_caes: "Sim",
-    afinidade_gatos: "Não testado",
-    gosta_de_carinho: "Sim",
-    gosta_de_brincar: "Sim",
-    gosta_de_passear: "Sim",
-    agitado: "Não",
-    pula_muito: "Não",
-    late_muito: "Não",
-    possessivo: "Não",
-    medicacao_continua: "Não",
-    comorbidades: "Não",
-    descricao: "Resgatado em uma construção em Mauá junto com a Pilar. Corriam risco de cair no fosso do elevador pois ficavam em um andar mais elevado",
-    tags: ["Dócil", "Brincalhão", "Tranquilo"]
-  },
-
-];
-
-/* ═══════════════════════════════════════════════════════════════
-   FIM DOS DADOS — não é necessário editar abaixo
-═══════════════════════════════════════════════════════════════ */
 
 
 // ── Renderiza os cards dos cachorros ──────────────────────────
