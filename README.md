@@ -3,7 +3,7 @@
 
 ## Descrição
 
-Site construído para a ONG Pet Friends (@petfriends_animal - Instagram), de  forma voluntária, para auxiliar na divulgação dos animais disponíveis e suas caracteísticas.
+Site construído para a ONG Pet Friends (@petfriends_animal - Instagram), de  forma voluntária, para auxiliar na divulgação dos animais disponíveis e suas características.
 
 ## Como foi feito
 
