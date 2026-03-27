@@ -103,10 +103,7 @@ function openModal(index) {
   const overlay = document.getElementById("modal-overlay");
   const box     = document.getElementById("modal-box");
 
-  const whatsapp = ONG.contatos.find(c => c.label === "WhatsApp");
-  const link = whatsapp
-    ? `${whatsapp.link}?text=Olá! Tenho interesse em adotar ${dog.nome} 🐾`
-    : "#contato";
+const link = "https://ig.me/m/petfriends_animal";
 
   box.innerHTML = `
     ${dog.foto
