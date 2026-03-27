@@ -33,9 +33,9 @@ function renderCards() {
       onclick="openModal(${index})"
       onkeydown="if(event.key==='Enter') openModal(${index})">
 
-      ${dog.foto
-        ? `<img class="dog-photo" src="${dog.foto}" alt="Foto de ${dog.nome}" loading="lazy" />`
-        : `<div class="dog-photo-placeholder" aria-label="Foto de ${dog.nome}">${dog.emoji}</div>`}
+    ${dog.foto
+      ? `<img class="dog-photo" src="${dog.foto}" alt="Foto de ${dog.nome}" loading="lazy" />`
+      : `<div class="dog-photo-placeholder">${dog.emoji}</div>`}
 
       <div class="dog-body">
         <h3 class="dog-name">${dog.nome}</h3>
@@ -73,9 +73,11 @@ function openModal(index) {
 const link = "https://ig.me/m/petfriends_animal";
 
   box.innerHTML = `
-    ${dog.foto
-      ? `<img class="modal-photo" src="${dog.foto}" alt="Foto de ${dog.nome}" />`
-      : `<div class="modal-photo-placeholder">${dog.emoji}</div>`}
+  ${dog.foto
+    ? `<img class="modal-photo" src="${dog.foto}" alt="Foto de ${dog.nome}"
+        onclick="openLightbox('${dog.foto}', '${dog.nome}')"
+        style="cursor: zoom-in;" />`
+    : `<div class="modal-photo-placeholder">${dog.emoji}</div>`}
 
     <div class="modal-body">
       <button class="modal-close" onclick="closeModal()" aria-label="Fechar">✕</button>
@@ -174,6 +176,23 @@ document.getElementById("modal-overlay").addEventListener("click", function (e) 
 // Fecha com a tecla ESC
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") closeModal();
+});
+
+// ── Lightbox ──────────────────────────────────────────────────
+function openLightbox(src, alt) {
+  document.getElementById('lightbox-img').src = src;
+  document.getElementById('lightbox-img').alt = alt;
+  document.getElementById('lightbox-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') closeLightbox();
 });
 
 // ── Inicialização ─────────────────────────────────────────────
