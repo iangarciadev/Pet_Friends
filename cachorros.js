@@ -481,7 +481,7 @@ const CACHORROS = [
 
     {
     nome: "Teddy",
-    foto: "Imagens/tedy.jpeg",
+    foto: "Imagens/teddy.jpeg",
     emoji: "🐶",
     idade: "5 anos",
     porte: "Médio",
