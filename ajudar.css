@@ -39,3 +39,11 @@
   font-size: 1.05rem;
   padding: 14px 36px;
 }
+
+.btn-info {
+  font-size: 1.05rem;
+  padding: 14px 36px;
+  background: transparent;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+}
