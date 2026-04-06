@@ -149,7 +149,7 @@ function renderCards() {
 
 // Carrega mais 10 cards ao clicar no botão "Ver mais".
 function showMore() {
-  visibleCount += 10;
+  visibleCount += 9;
   renderCards();
 }
 
