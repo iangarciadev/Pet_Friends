@@ -43,13 +43,18 @@
         </div>
     </div>
     </a>
-  <nav>
+  <nav id="nav-menu">
     <a href="/">Página Inicial</a>
     <a href="/quem-somos.html">Quem somos</a>
     <a href="/#cachorros">Adotar</a>
     <a href="/#contato">Contato</a>
     <a href="/ajudar.html">Formas de ajudar</a>
   </nav>
+  <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   </header>
 
   <!-- ══════════════ TÍTULO ══════════════ -->
@@ -152,6 +157,28 @@
   <footer>
     © 2026 Pet Friends — Feito com 🧡 por quem ama animais
   </footer>
+
+  <script>
+    (function () {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu   = document.getElementById('nav-menu');
+      if (!hamburger || !navMenu) return;
+
+      hamburger.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        hamburger.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+      });
+
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
 
 </body>
 </html>

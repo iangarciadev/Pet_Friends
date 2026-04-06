@@ -199,6 +199,27 @@ document.addEventListener('keydown', function (e) {
 renderCards();
 renderContacts();
 
+// ── Menu hamburger ────────────────────────────────────────────
+(function () {
+  const hamburger = document.getElementById('hamburger');
+  const navMenu   = document.getElementById('nav-menu');
+  if (!hamburger || !navMenu) return;
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = navMenu.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
 // Mostra o botão só após rolar 300px
 window.addEventListener('scroll', function () {
   const btn = document.getElementById('back-to-top');
