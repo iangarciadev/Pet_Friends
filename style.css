@@ -408,7 +408,7 @@ footer {
 }
 .help-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   background: var(--border);
   border: 1.5px solid rgba(255,255,255,.25);
@@ -416,13 +416,24 @@ footer {
   padding: 18px;
 }
 .help-icon {
-  font-size: 1.6rem;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
   flex-shrink: 0;
+}
+.help-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--border);
+  stroke-width: 1.75;
 }
 .help-item strong {
   display: block;
-  color: var(--accent);
+  color: var(--muted);
   font-size: .95rem;
   margin-bottom: 4px;
 }
@@ -438,6 +449,31 @@ footer {
   font-family: 'Fraunces', serif;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Teaser "Como ajudar" (index)
+───────────────────────────────────────────────────────────── */
+.help-teaser {
+  background: var(--bg);
+  border-top: 1.5px solid var(--border);
+}
+.help-teaser-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 64px 5%;
+  text-align: center;
+}
+.help-teaser-inner h2 {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.help-teaser-inner p {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 32px;
 }
 
 /* ─────────────────────────────────────────────────────────────
