@@ -21,6 +21,68 @@ const ONG = {
 
 
 
+// ── Filtros ───────────────────────────────────────────────────
+const activeFilters = { sexo: null, porte: [], caracteristicas: [] };
+
+function toggleFilters() {
+  const panel = document.getElementById('filters');
+  const btn   = document.getElementById('filter-toggle-btn');
+  const open  = panel.style.display === 'none';
+  panel.style.display = open ? 'flex' : 'none';
+  btn.textContent = open ? 'Filtrar ▴' : 'Filtrar ▾';
+  btn.classList.toggle('active', open);
+}
+
+function toggleSingle(field, value) {
+  activeFilters[field] = activeFilters[field] === value ? null : value;
+  updatePills();
+  visibleCount = 10;
+  renderCards();
+}
+
+function togglePorte(value) {
+  const idx = activeFilters.porte.indexOf(value);
+  if (idx === -1) activeFilters.porte.push(value);
+  else activeFilters.porte.splice(idx, 1);
+  updatePills();
+  visibleCount = 10;
+  renderCards();
+}
+
+function toggleCarac(field) {
+  const idx = activeFilters.caracteristicas.indexOf(field);
+  if (idx === -1) activeFilters.caracteristicas.push(field);
+  else activeFilters.caracteristicas.splice(idx, 1);
+  updatePills();
+  visibleCount = 10;
+  renderCards();
+}
+
+function updatePills() {
+  document.querySelectorAll('.filter-pill').forEach(btn => {
+    const filter = btn.dataset.filter;
+    const value  = btn.dataset.value;
+    let active = false;
+    if (filter === 'sexo')  active = activeFilters.sexo  === value;
+    if (filter === 'porte') active = activeFilters.porte.includes(value);
+    if (filter === 'carac') active = activeFilters.caracteristicas.includes(value);
+    btn.classList.toggle('active', active);
+  });
+}
+
+function applyFilters(dogs) {
+  return dogs.filter(dog => {
+    if (activeFilters.sexo  && dog.sexo  !== activeFilters.sexo)  return false;
+    if (activeFilters.porte.length && !activeFilters.porte.includes(dog.porte)) return false;
+    for (const campo of activeFilters.caracteristicas) {
+      const val = (dog[campo] || '').toLowerCase();
+      if (campo === 'agitado') { if (val !== 'não') return false; }
+      else if (val !== 'sim') return false;
+    }
+    return true;
+  });
+}
+
 // ── Renderiza os cards dos cachorros ──────────────────────────
 let visibleCount = 10;
 
@@ -29,11 +91,20 @@ function renderCards() {
   const label   = document.getElementById("count-label");
   const wrapper = document.getElementById("show-more-wrapper");
 
-  label.textContent = `${CACHORROS.length} animais disponíveis`;
+  const filtered = applyFilters(CACHORROS);
+  const visible  = filtered.slice(0, visibleCount);
 
-  const visible = CACHORROS.slice(0, visibleCount);
+  label.textContent = `${filtered.length} animais disponíveis`;
 
-  grid.innerHTML = visible.map((dog, index) => `
+  if (filtered.length === 0) {
+    grid.innerHTML = `<p class="no-results">Nenhum animal encontrado com esses filtros.</p>`;
+    wrapper.style.display = "none";
+    return;
+  }
+
+  grid.innerHTML = visible.map((dog) => {
+    const index = CACHORROS.indexOf(dog);
+    return `
     <article class="dog-card" tabindex="0"
       onclick="openModal(${index})"
       onkeydown="if(event.key==='Enter') openModal(${index})">
@@ -51,9 +122,10 @@ function renderCards() {
         <span class="dog-btn">Ver mais & adotar</span>
       </div>
     </article>
-  `).join("");
+  `;
+  }).join("");
 
-  wrapper.style.display = visibleCount < CACHORROS.length ? "flex" : "none";
+  wrapper.style.display = visibleCount < filtered.length ? "flex" : "none";
 }
 
 function showMore() {

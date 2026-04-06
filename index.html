@@ -63,7 +63,40 @@
   <section class="section" id="cachorros">
     <div class="section-header">
       <h2 class="section-title">Quem está te esperando 🐶</h2>
-      <span class="section-count" id="count-label"></span>
+      <div class="section-header-right">
+        <span class="section-count" id="count-label"></span>
+        <button class="filter-toggle-btn" id="filter-toggle-btn" onclick="toggleFilters()">Filtrar ▾</button>
+      </div>
+    </div>
+    <div class="filters" id="filters" style="display:none">
+
+      <div class="filter-group">
+        <span class="filter-label">Sexo</span>
+        <div class="filter-pills">
+          <button class="filter-pill" data-filter="sexo" data-value="Macho" onclick="toggleSingle('sexo','Macho')">Macho</button>
+          <button class="filter-pill" data-filter="sexo" data-value="Fêmea" onclick="toggleSingle('sexo','Fêmea')">Fêmea</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Porte</span>
+        <div class="filter-pills">
+          <button class="filter-pill" data-filter="porte" data-value="Pequeno" onclick="togglePorte('Pequeno')">Pequeno</button>
+          <button class="filter-pill" data-filter="porte" data-value="Médio"   onclick="togglePorte('Médio')">Médio</button>
+          <button class="filter-pill" data-filter="porte" data-value="Grande"  onclick="togglePorte('Grande')">Grande</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Características</span>
+        <div class="filter-pills">
+          <button class="filter-pill" data-filter="carac" data-value="afinidade_caes"  onclick="toggleCarac('afinidade_caes')">Afinidade com cães</button>
+          <button class="filter-pill" data-filter="carac" data-value="afinidade_gatos" onclick="toggleCarac('afinidade_gatos')">Afinidade com gatos</button>
+          <button class="filter-pill" data-filter="carac" data-value="agitado"         onclick="toggleCarac('agitado')">Tranquilo</button>
+          <button class="filter-pill" data-filter="carac" data-value="gosta_de_brincar" onclick="toggleCarac('gosta_de_brincar')">Gosta de brincar</button>
+        </div>
+      </div>
+
     </div>
     <div class="dogs-grid" id="dogs-grid">
       <!-- Preenchido pelo JavaScript -->
