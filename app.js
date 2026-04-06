@@ -22,13 +22,18 @@ const ONG = {
 
 
 // ── Renderiza os cards dos cachorros ──────────────────────────
+let visibleCount = 10;
+
 function renderCards() {
-  const grid  = document.getElementById("dogs-grid");
-  const label = document.getElementById("count-label");
+  const grid    = document.getElementById("dogs-grid");
+  const label   = document.getElementById("count-label");
+  const wrapper = document.getElementById("show-more-wrapper");
 
   label.textContent = `${CACHORROS.length} animais disponíveis`;
 
-  grid.innerHTML = CACHORROS.map((dog, index) => `
+  const visible = CACHORROS.slice(0, visibleCount);
+
+  grid.innerHTML = visible.map((dog, index) => `
     <article class="dog-card" tabindex="0"
       onclick="openModal(${index})"
       onkeydown="if(event.key==='Enter') openModal(${index})">
@@ -47,6 +52,13 @@ function renderCards() {
       </div>
     </article>
   `).join("");
+
+  wrapper.style.display = visibleCount < CACHORROS.length ? "flex" : "none";
+}
+
+function showMore() {
+  visibleCount += 10;
+  renderCards();
 }
 
 // ── Renderiza os links de contato ─────────────────────────────
