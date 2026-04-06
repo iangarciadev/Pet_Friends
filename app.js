@@ -1,5 +1,6 @@
 
 
+// Dados gerais da ONG: nome e canais de contato exibidos na seção de contato.
 const ONG = {
   nome: "Pet Friends",
   contatos: [
@@ -22,8 +23,12 @@ const ONG = {
 
 
 // ── Filtros ───────────────────────────────────────────────────
+
+// Estado atual dos filtros ativos. "sexo" aceita um único valor; "porte" e
+// "caracteristicas" aceitam múltiplos valores simultaneamente.
 const activeFilters = { sexo: null, porte: [], caracteristicas: [] };
 
+// Abre ou fecha o painel de filtros e atualiza o texto/ícone do botão.
 function toggleFilters() {
   const panel = document.getElementById('filters');
   const btn   = document.getElementById('filter-toggle-btn');
@@ -33,6 +38,8 @@ function toggleFilters() {
   btn.classList.toggle('active', open);
 }
 
+// Alterna um filtro de seleção única (ex: sexo). Se o valor já estava ativo,
+// desmarca; caso contrário, substitui o valor anterior.
 function toggleSingle(field, value) {
   activeFilters[field] = activeFilters[field] === value ? null : value;
   updatePills();
@@ -40,6 +47,7 @@ function toggleSingle(field, value) {
   renderCards();
 }
 
+// Adiciona ou remove um valor do filtro de porte (seleção múltipla).
 function togglePorte(value) {
   const idx = activeFilters.porte.indexOf(value);
   if (idx === -1) activeFilters.porte.push(value);
@@ -49,6 +57,7 @@ function togglePorte(value) {
   renderCards();
 }
 
+// Adiciona ou remove uma característica do filtro de características (seleção múltipla).
 function toggleCarac(field) {
   const idx = activeFilters.caracteristicas.indexOf(field);
   if (idx === -1) activeFilters.caracteristicas.push(field);
@@ -58,6 +67,8 @@ function toggleCarac(field) {
   renderCards();
 }
 
+// Atualiza a aparência visual (ativo/inativo) de todos os botões de filtro
+// com base no estado atual de activeFilters.
 function updatePills() {
   document.querySelectorAll('.filter-pill').forEach(btn => {
     const filter = btn.dataset.filter;
@@ -70,6 +81,9 @@ function updatePills() {
   });
 }
 
+// Retorna apenas os cachorros que correspondem a todos os filtros ativos.
+// Para "agitado", o filtro busca cachorros que NÃO são agitados (valor "não").
+// Para as demais características, busca cachorros com valor "sim".
 function applyFilters(dogs) {
   return dogs.filter(dog => {
     if (activeFilters.sexo  && dog.sexo  !== activeFilters.sexo)  return false;
@@ -84,8 +98,13 @@ function applyFilters(dogs) {
 }
 
 // ── Renderiza os cards dos cachorros ──────────────────────────
+
+// Quantidade de cards visíveis na página. Aumenta em 10 a cada clique em "Ver mais".
 let visibleCount = 9;
 
+// Renderiza os cards dos cachorros no grid, aplicando os filtros ativos.
+// Exibe mensagem caso nenhum animal corresponda aos filtros.
+// Controla a visibilidade do botão "Ver mais" conforme o total filtrado.
 function renderCards() {
   const grid    = document.getElementById("dogs-grid");
   const label   = document.getElementById("count-label");
@@ -128,12 +147,16 @@ function renderCards() {
   wrapper.style.display = visibleCount < filtered.length ? "flex" : "none";
 }
 
+// Carrega mais 10 cards ao clicar no botão "Ver mais".
 function showMore() {
   visibleCount += 10;
   renderCards();
 }
 
 // ── Renderiza os links de contato ─────────────────────────────
+
+// Gera os links de contato da ONG (Instagram, e-mail, etc.) a partir do
+// array ONG.contatos e os insere na seção de contato da página.
 function renderContacts() {
   const wrapper = document.getElementById("contact-links");
 
@@ -149,6 +172,10 @@ function renderContacts() {
 }
 
 // ── Detalhes exibidos no modal ────────────────────────────────
+
+// Lista de campos exibidos no modal de detalhes do cachorro.
+// Para adicionar ou remover um campo, basta inserir ou apagar uma linha aqui.
+// "label" é o texto exibido; "key" é a propriedade correspondente no objeto do cachorro.
 const DETALHES_MODAL = [
   { label: "Idade",               key: "idade" },
   { label: "Porte",               key: "porte" },
@@ -169,6 +196,9 @@ const DETALHES_MODAL = [
 ];
 
 // ── Abre o modal com os detalhes do cachorro ──────────────────
+
+// Preenche e exibe o modal com as informações do cachorro pelo seu índice
+// no array CACHORROS. Bloqueia o scroll da página enquanto o modal está aberto.
 function openModal(index) {
   const dog     = CACHORROS[index];
   const overlay = document.getElementById("modal-overlay");
@@ -209,22 +239,27 @@ function openModal(index) {
 }
 
 // ── Fecha o modal ─────────────────────────────────────────────
+
+// Remove a classe "open" do modal e restaura o scroll da página.
 function closeModal() {
   document.getElementById("modal-overlay").classList.remove("open");
   document.body.style.overflow = "";
 }
 
-// Fecha ao clicar fora do modal
+// Fecha o modal ao clicar no fundo escuro (fora da caixa do modal).
 document.getElementById("modal-overlay").addEventListener("click", function (e) {
   if (e.target === this) closeModal();
 });
 
-// Fecha com a tecla ESC
+// Fecha o modal ao pressionar a tecla ESC.
 document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") closeModal();
 });
 
 // ── Lightbox ──────────────────────────────────────────────────
+
+// Abre o lightbox com a foto ampliada do cachorro.
+// Recebe a URL da imagem e o texto alternativo (nome do animal).
 function openLightbox(src, alt) {
   document.getElementById('lightbox-img').src = src;
   document.getElementById('lightbox-img').alt = alt;
@@ -232,11 +267,13 @@ function openLightbox(src, alt) {
   document.body.style.overflow = 'hidden';
 }
 
+// Fecha o lightbox e restaura o scroll da página.
 function closeLightbox() {
   document.getElementById('lightbox-overlay').classList.remove('open');
   document.body.style.overflow = '';
 }
 
+// Fecha o lightbox ao pressionar a tecla ESC.
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape') closeLightbox();
 });
@@ -246,6 +283,9 @@ renderCards();
 renderContacts();
 
 // ── Menu hamburger ────────────────────────────────────────────
+
+// Controla a abertura e fechamento do menu mobile (hamburger).
+// Fecha automaticamente ao clicar em qualquer link do menu.
 (function () {
   const hamburger = document.getElementById('hamburger');
   const navMenu   = document.getElementById('nav-menu');
@@ -266,7 +306,7 @@ renderContacts();
   });
 })();
 
-// Mostra o botão só após rolar 300px
+// Exibe o botão "voltar ao topo" somente após o usuário rolar 300px para baixo.
 window.addEventListener('scroll', function () {
   const btn = document.getElementById('back-to-top');
   if (window.scrollY > 300) {
