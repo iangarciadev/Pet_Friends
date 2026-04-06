@@ -84,7 +84,7 @@ function applyFilters(dogs) {
 }
 
 // ── Renderiza os cards dos cachorros ──────────────────────────
-let visibleCount = 10;
+let visibleCount = 9;
 
 function renderCards() {
   const grid    = document.getElementById("dogs-grid");
