@@ -148,13 +148,33 @@ function renderContacts() {
   `).join("");
 }
 
+// ── Detalhes exibidos no modal ────────────────────────────────
+const DETALHES_MODAL = [
+  { label: "Idade",               key: "idade" },
+  { label: "Porte",               key: "porte" },
+  { label: "Sexo",                key: "sexo" },
+  { label: "Castrado",            key: "castrado" },
+  { label: "Vacinado",            key: "vacinado" },
+  { label: "Afinidade com cães",  key: "afinidade_caes" },
+  { label: "Afinidade com gatos", key: "afinidade_gatos" },
+  { label: "Gosta de carinho?",   key: "gosta_de_carinho" },
+  { label: "Gosta de brincar?",   key: "gosta_de_brincar" },
+  { label: "Gosta de passear?",   key: "gosta_de_passear" },
+  { label: "Agitado",             key: "agitado" },
+  { label: "Pula muito?",         key: "pula_muito" },
+  { label: "Late muito?",         key: "late_muito" },
+  { label: "Possessivo?",         key: "possessivo" },
+  { label: "Medicação contínua?", key: "medicacao_continua" },
+  { label: "Comorbidades?",       key: "comorbidades" },
+];
+
 // ── Abre o modal com os detalhes do cachorro ──────────────────
 function openModal(index) {
   const dog     = CACHORROS[index];
   const overlay = document.getElementById("modal-overlay");
   const box     = document.getElementById("modal-box");
 
-const link = "https://ig.me/m/petfriends_animal";
+  const link = "https://ig.me/m/petfriends_animal";
 
   box.innerHTML = `
   ${dog.foto
@@ -171,70 +191,12 @@ const link = "https://ig.me/m/petfriends_animal";
       </div>
       <p class="modal-desc">${dog.descricao}</p>
       <div class="modal-details">
-        <div class="modal-detail">
-          <div class="modal-detail-label">Idade</div>
-          <div class="modal-detail-value">${dog.idade}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Porte</div>
-          <div class="modal-detail-value">${dog.porte}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Sexo</div>
-          <div class="modal-detail-value">${dog.sexo}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Castrado</div>
-          <div class="modal-detail-value">${dog.castrado}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Vacinado</div>
-          <div class="modal-detail-value">${dog.vacinado}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Afinidade com cães</div>
-          <div class="modal-detail-value">${dog.afinidade_caes}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Afinidade com gatos</div>
-          <div class="modal-detail-value">${dog.afinidade_gatos}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Gosta de carinho?</div>
-          <div class="modal-detail-value">${dog.gosta_de_carinho}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Gosta de brincar?</div>
-          <div class="modal-detail-value">${dog.gosta_de_brincar}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Gosta de passear?</div>
-          <div class="modal-detail-value">${dog.gosta_de_passear}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label"> Agitado</div>
-          <div class="modal-detail-value">${dog.agitado}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Pula muito?</div>
-          <div class="modal-detail-value">${dog.pula_muito}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Late muito?</div>
-          <div class="modal-detail-value">${dog.late_muito}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Possessivo?</div>
-          <div class="modal-detail-value">${dog.possessivo}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Medicação contínua?</div>
-          <div class="modal-detail-value">${dog.medicacao_continua}</div>
-        </div>
-        <div class="modal-detail">
-          <div class="modal-detail-label">Comorbidades?</div>
-          <div class="modal-detail-value">${dog.comorbidades}</div>
-        </div>
+        ${DETALHES_MODAL.map(d => `
+          <div class="modal-detail">
+            <div class="modal-detail-label">${d.label}</div>
+            <div class="modal-detail-value">${dog[d.key]}</div>
+          </div>
+        `).join("")}
       </div>
       <a href="${link}" class="modal-adopt-btn" target="_blank" rel="noopener">
         Quero adotar ${dog.nome}! 🐾
