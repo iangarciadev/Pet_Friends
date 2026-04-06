@@ -29,10 +29,17 @@
 /* Bloco de CTA com botão de doação */
 .donation-cta {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 24px;
+  justify-content: center;
+  gap: 16px;
   margin-top: 8px;
+}
+@media (max-width: 500px) {
+  .donation-cta {
+    flex-direction: column;
+  }
 }
 
 .btn-donation {
